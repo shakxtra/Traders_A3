@@ -7,7 +7,7 @@ if (isNull _container) exitWith {false};
 if (_classname isEqualTo "") exitWith {false};
 
 private _found = false;
-private _data = (_container call HALs_store_fnc_getContainerCargo);
+private _data = (_container call LWFs_store_fnc_getContainerCargo);
 _data params ["_magazines", "_items", "_weapons", "_containers"];
 
 try {
@@ -65,8 +65,8 @@ try {
         };
     } forEach _items;
 } catch {
-    [_container] call HALs_store_fnc_clearContainerCargo;
-    [_container, _data] call HALs_store_fnc_addContainerCargo;
+    [_container] call LWFs_store_fnc_clearContainerCargo;
+    [_container, _data] call LWFs_store_fnc_addContainerCargo;
 
     _found = _exception;
 };
