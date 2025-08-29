@@ -1,6 +1,6 @@
 /*
-	Function: HALs_store_fnc_getPlayerItems
-	Author: HallyG
+	Function: LWFs_store_fnc_getPlayerItems
+	Author: LWFs
 	Returns an equipped item from the unit.
 
 	Argument(s):
@@ -11,7 +11,7 @@
 	None
 
 	Example:
-	[_unit] call HALs_store_fnc_getPlayerItems;
+	[_unit] call LWFs_store_fnc_getPlayerItems;
 __________________________________________________________________*/
 params [
     ["_unit", objNull, []],
