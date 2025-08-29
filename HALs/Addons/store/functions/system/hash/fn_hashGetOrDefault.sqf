@@ -1,6 +1,6 @@
 /*
-	Function: HALs_store_fnc_hashGetOrDefault
-	Author: HallyG
+	Function: LWFs_store_fnc_hashGetOrDefault
+	Author: LWFs
 	
 
 	Argument(s):
@@ -10,12 +10,13 @@
 	None
 
 	Example:
-	[] call HALs_store_fnc_hashGetOrDefault;
+	[] call LWFs_store_fnc_hashGetOrDefault;
 __________________________________________________________________*/
 params ["_c", "_k", "_default"];
 	
 if (_k isEqualTo "") exitWith {_default};
 
-private _val = [_c, _k] call HALs_store_fnc_hashGet;
+private _val = [_c, _k] call LWFs_store_fnc_hashGet;
+
 
 if (isNil "_val") then {_default} else {_val}
