@@ -1,6 +1,6 @@
 /*
-	Function: HALs_store_fnc_canEquipItem
-	Author: Exile Mod, HallyG
+	Function: LWFs_store_fnc_canEquipItem
+	Author: LWFs
 	Checks if an item can be equipped by a unit.
 
 	Argument(s):
@@ -11,7 +11,7 @@
 	<BOOL>
 
 	Example:
-	[player, "acc_flashlight"] call HALs_store_fnc_canEquipItem;
+	[player, "acc_flashlight"] call LWFs_store_fnc_canEquipItem;
 __________________________________________________________________*/
 params [
 	["_unit", objNull],
@@ -45,7 +45,7 @@ switch (_itemCategory) do {
 		{
 			if (count (_x select 0) > 0) then {
 				if ((_x select 1) isEqualTo []) then {
-					_compatibleWeaponItems = ((_x select 0) call HALs_store_fnc_getCompatibleItems) apply {toLower _x};
+					_compatibleWeaponItems = ((_x select 0) call LWFs_store_fnc_getCompatibleItems) apply {toLower _x};
 
 					_canAdd = _classname in _compatibleWeaponItems;
 				};
@@ -75,7 +75,7 @@ switch (_itemCategory) do {
 				{
 					if (count (_x select 0) > 0) then {
 						if (((_x select 1) select _attachmentSlotIndex) isEqualTo "") then {
-							_compatibleWeaponItems = ((_x select 0) call HALs_store_fnc_getCompatibleItems) apply {toLower _x};
+							_compatibleWeaponItems = ((_x select 0) call LWFs_store_fnc_getCompatibleItems) apply {toLower _x};
 
 							_canAdd = _classname in _compatibleWeaponItems;
 						};
@@ -101,3 +101,4 @@ switch (_itemCategory) do {
 };
 
 _canAdd
+
