@@ -1,6 +1,6 @@
 /*
-	Function: HALs_store_fnc_canAddItem
-	Author: HallyG
+	Function: LWFs_store_fnc_canAddItem
+	Author: LWFs
 	Checks if the given item(s) can be added to a container.
 
 	Argument(s):
@@ -13,7 +13,7 @@
 	<BOOLEAN>
 
 	Example:
-	[player, "acc_flashlight", 1] call HALs_store_fnc_canAddItem;
+	[player, "acc_flashlight", 1] call LWFs_store_fnc_canAddItem;
 __________________________________________________________________*/
 params [
 	["_container", objNull, [objNull]],
@@ -40,3 +40,4 @@ if (_classname isEqualTo "") exitWith {false};
 if (_amount < 1) exitWith {false};
 
 _container canAdd [_classname, _amount]
+
