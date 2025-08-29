@@ -1,11 +1,11 @@
-class HALs_store {
+class LWFs_store {
 	class Init {
-		file = "HALs\Addons\store\functions";
+		file = "LWFs\Addons\store\functions";
 		class initModule {postInit = 1;};
 	};
 
 	class Cargo {
-		file = "HALs\Addons\store\functions\system\cargo";
+		file = "LWFs\Addons\store\functions\system\cargo";
 		class addContainerCargo {};
 		class getContainerCargo {};
 		class getContainerItems {};
@@ -17,21 +17,21 @@ class HALs_store {
 	};
 	
 	class Hash {
-		file = "HALs\Addons\store\functions\system\hash";
+		file = "LWFs\Addons\store\functions\system\hash";
 		class hashSet {};
 		class hashGet {};
 		class hashGetOrDefault {headerType = -1;};
 	};
 
 	class Client {
-		file = "HALs\Addons\store\functions\client";
+		file = "LWFs\Addons\store\functions\client";
 		class initClient {};
 		class openStore {};
 		class systemChat {};
 	};
 
 	class Config {
-		file = "HALs\Addons\store\functions\system\config";
+		file = "LWFs\Addons\store\functions\system\config";
 		class getCompatibleItems {};
 		class getItemMass {};
 		class getItemStats {};
@@ -41,7 +41,7 @@ class HALs_store {
 	};
 
 	class Server {
-		file = "HALs\Addons\store\functions\server";
+		file = "LWFs\Addons\store\functions\server";
 		class addTrader {};
 		class addActionTrader {};
 		class initServer {};
@@ -50,14 +50,14 @@ class HALs_store {
 	};
 
 	class Stock {
-		file = "HALs\Addons\store\functions\server\stock";
+		file = "LWFs\Addons\store\functions\server\stock";
 		class getTraderStock {};
 		class setTraderStock {};
 		class updateStock {};
 	};
 
 	class System {
-		file = "HALs\Addons\store\functions\system";
+		file = "LWFs\Addons\store\functions\system";
 		class addItemCargo {};
 		class canAddItem {};
 		class canEquipItem {};
@@ -65,9 +65,10 @@ class HALs_store {
 	};
 
 	class UI {
-		file = "HALs\Addons\store\functions\client\ui";
+		file = "LWFs\Addons\store\functions\client\ui";
 		class main {};
 		class update {};
 		class eachFrame {headerType = -1;};
 	};
 };
+
