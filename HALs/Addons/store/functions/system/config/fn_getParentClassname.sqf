@@ -1,6 +1,6 @@
 /*
-	Function: HALs_store_fnc_getParentClassname
-	Author: HallyG
+	Function: LWFs_store_fnc_getParentClassname
+	Author: LWFs
 	Returns the classname of a weapons parent.
 
 	Argument(s):
@@ -10,7 +10,7 @@
 	<STRING>
 
 	Example:
-	_item call HALs_store_fnc_getParentClassname;
+	_item call LWFs_store_fnc_getParentClassname;
 __________________________________________________________________*/
 #define CFG configFile >> "CfgWeapons"
 
