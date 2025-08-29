@@ -1,8 +1,6 @@
 /*
-	Function: HALs_store_fnc_hashSet
-	Author: NouberNou, HallyG
-	https://www.reddit.com/r/armadev/comments/3haiax/improving_the_speed_of_associative_maps_with/
-
+	Function: LWFs_store_fnc_hashSet
+	Author: LWFs
 	Argument(s):
 	0: None
 
@@ -10,7 +8,7 @@
 	None
 
 	Example:
-	[] call HALs_store_fnc_hashSet;
+	[] call LWFs_store_fnc_hashSet;
 __________________________________________________________________*/
 #include "script_component.hpp"
 
@@ -41,4 +39,5 @@ if (_index == -1) then {
 	_vals pushBack _val;
 } else {
 	_vals set[_index, _val];
+
 };
