@@ -1,5 +1,5 @@
 /*
-	Function: HALs_store_fnc_equipItem
+	Function: LWFs_store_fnc_equipItem
 	Author: Exile Mod, HallyG
 	Equips an item on a unit.
 
@@ -11,7 +11,7 @@
 	<BOOL>
 
 	Example:
-	[player, "acc_flashlight"] call HALs_store_fnc_equipItem;
+	[player, "acc_flashlight"] call LWFs_store_fnc_equipItem;
 	// todo fix grenades being added
 __________________________________________________________________*/
 params [
@@ -32,7 +32,7 @@ if (_itemCategory isEqualTo "Magazine") then {
 			switch (_forEachIndex) do {
 				case 0: {
 					if ((primaryWeaponMagazine _unit) isEqualTo []) then {
-						_compatibleWeaponItems = (_x call HALs_store_fnc_getCompatibleItems) apply {toLower _x};
+						_compatibleWeaponItems = (_x call LWFs_store_fnc_getCompatibleItems) apply {toLower _x};
 						if (_classname in _compatibleWeaponItems) then {
 							_unit addPrimaryWeaponItem _classname;
 							_added = true;
@@ -41,7 +41,7 @@ if (_itemCategory isEqualTo "Magazine") then {
 				};
 				case 1: {
 					if ((secondaryWeaponMagazine _unit) isEqualTo []) then {
-						_compatibleWeaponItems = (_x call HALs_store_fnc_getCompatibleItems) apply {toLower _x};
+						_compatibleWeaponItems = (_x call LWFs_store_fnc_getCompatibleItems) apply {toLower _x};
 						if (_classname in _compatibleWeaponItems) then {
 							_unit addSecondaryWeaponItem _classname;
 							_added = true;
@@ -50,7 +50,7 @@ if (_itemCategory isEqualTo "Magazine") then {
 				};
 				case 2: {
 					if ((handgunMagazine _unit) isEqualTo []) then {
-						_compatibleWeaponItems = (_x call HALs_store_fnc_getCompatibleItems) apply {toLower _x};
+						_compatibleWeaponItems = (_x call LWFs_store_fnc_getCompatibleItems) apply {toLower _x};
 						if (_classname in _compatibleWeaponItems) then {
 							_unit addHandgunItem _classname;
 							_added = true;
@@ -90,7 +90,7 @@ if (_itemCategory isEqualTo "Magazine") then {
 		if (_itemType in ["AccessorySights", "AccessoryPointer", "AccessoryMuzzle", "AccessoryBipod"]) exitWith {
 			{
 				if !(_x isEqualTo "") then {
-					_compatibleWeaponItems = (_x call HALs_store_fnc_getCompatibleItems) apply {toLower _x};
+					_compatibleWeaponItems = (_x call LWFs_store_fnc_getCompatibleItems) apply {toLower _x};
 					if (_classname in _compatibleWeaponItems) exitWith {
 						switch (_forEachIndex) do {
 							case 0: {_unit addPrimaryWeaponItem _classname; _added = true;};
@@ -107,3 +107,4 @@ if (_itemCategory isEqualTo "Magazine") then {
 	};
 };
 _added
+
