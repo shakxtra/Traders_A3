@@ -1,6 +1,6 @@
 /*
 	Function: LWFs_store_getItemMass
-	Author: ACE 3, HallyG
+	Author: LWFs
 	Returns the mass of the item provided.
 	
 	Argument(s):
