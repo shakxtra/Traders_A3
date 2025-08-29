@@ -1,6 +1,6 @@
 /*
-	Function: HALs_store_fnc_getItemStats
-	Author: HallyG, BIS
+	Function: LWFs_store_fnc_getItemStats
+	Author: LWFs
 	Gets the stats of an item compared to global values.
 
 	Argument(s):
@@ -10,15 +10,15 @@
 	<ARRAY>
 
 	Example:
-	["acc_flashlight"] call HALs_store_fnc_getItemStats;
+	["acc_flashlight"] call LWFs_store_fnc_getItemStats;
 __________________________________________________________________*/
 params [
 	["_config", configNull, [configNull]]
 ];
 
-if (isNil "HALs_store_stats_weapons") exitWith {
+if (isNil "LWFs_store_stats_weapons") exitWith {
 	// Taken from BIS_fnc_arsenal, modified by HallyG
-	HALs_store_stats_weapons = [
+	LWFs_store_stats_weapons = [
 		("getNumber (_x >> 'scope') isEqualTo 2 && getNumber (_x >> 'type') < 5") configClasses (configfile >> "cfgWeapons"),
 		["reloadtime","dispersion","maxzeroing","hit","initSpeed"],
 		[true,true,false,true,false]
@@ -45,7 +45,7 @@ if (isNil "HALs_store_stats_weapons") exitWith {
 		_statsEquipmentMax set [_i,(_statsEquipmentMax select _i) max (_statsBackpacksMax select _i)];
 	};
 
-	HALs_store_stats_equipment = [_statsEquipmentMin, _statsEquipmentMax];
+	LWFs_store_stats_equipment = [_statsEquipmentMin, _statsEquipmentMax];
 
 	private _statsOpticsMin = ("isClass (_x >> 'ItemInfo' >> 'OpticsModes')" configClasses (configFile >> "CfgWeapons")) apply {
 		selectMax (("true" configClasses (_x >> "ItemInfo" >> "OpticsModes")) apply {getNumber (_x >> "distanceZoomMax")})
@@ -54,12 +54,12 @@ if (isNil "HALs_store_stats_weapons") exitWith {
 		selectMax (("true" configClasses (_x >> "ItemInfo" >> "OpticsModes")) apply {getNumber (_x >> "distanceZoomMax")})
 	};
 
-	HALs_store_stats_optics = [selectMin _statsOpticsMin, selectMax _statsOpticsMax];
+	LWFs_store_stats_optics = [selectMin _statsOpticsMin, selectMax _statsOpticsMax];
 };
 
 call {
 	if (getNumber (_config >> "type") in [1, 2, 4] && {getNumber (_config >> "isbackpack") != 1}) exitWith {
-		HALs_store_stats_weapons params ["_statsMin", "_statsMax"];
+		LWFs_store_stats_weapons params ["_statsMin", "_statsMax"];
 
 		private _stats = ([[_config], ["reloadtime","dispersion","maxzeroing","hit","initSpeed"], [true,true,false,true,false], _statsMin] call bis_fnc_configExtremes) select 1;
 		private _barMax = 1;
@@ -93,7 +93,7 @@ call {
 	};
 
 	if (getNumber (_config >> "itemInfo" >> "type") in [605,701,801] || (getNumber (_config >> "type") isEqualTo 1 && getNumber (_config >> "isbackpack") isEqualTo 1)) exitWith {
-		HALs_store_stats_equipment params ["_statsMin", "_statsMax"];
+		LWFs_store_stats_equipment params ["_statsMin", "_statsMax"];
 
 		private _stats = ([[_config], ["passthrough", "armor", "maximumLoad"], [false,false,false], _statsMin] call bis_fnc_configExtremes) select 1;
 		private _barMax = 1;
@@ -120,7 +120,7 @@ call {
 
 	if (isClass (_config >> 'ItemInfo' >> 'OpticsModes')) exitWith {
 		private _zoom = selectMax (("true" configClasses (_config >> "ItemInfo" >> "OpticsModes")) apply {getNumber (_x >> "distanceZoomMax")});
-		private _statZoom = linearConversion [HALs_store_stats_optics select 0, HALs_store_stats_optics select 1, _zoom, 0.01, 1, true];
+		private _statZoom = linearConversion [LWFs_store_stats_optics select 0, LWFs_store_stats_optics select 1, _zoom, 0.01, 1, true];
 
 		[
 			[_statZoom, "Zoom"],
