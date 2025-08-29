@@ -1,5 +1,5 @@
 /*
-	Function: HALs_store_getItemMass
+	Function: LWFs_store_getItemMass
 	Author: ACE 3, HallyG
 	Returns the mass of the item provided.
 	
@@ -10,7 +10,7 @@
 	<NUMBER>
 	
 	Example:
-	(primaryWeapon player) call HALs_store_fnc_getItemMass;
+	(primaryWeapon player) call LWFs_store_fnc_getItemMass;
 __________________________________________________________________*/
 private _totalMass = 0;
 
