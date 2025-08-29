@@ -1,6 +1,6 @@
 /*
-	Function: HALs_store_fnc_getItemType
-	Author: HallyG
+	Function: LWFs_store_fnc_getItemType
+	Author: LWFs
 	Returns an item's enumerated type.
 
 	Argument(s):
@@ -10,7 +10,7 @@
 	<NUMBER>
 
 	Example:
-	[_item] call HALs_store_fnc_getItemType;
+	[_item] call LWFs_store_fnc_getItemType;
 __________________________________________________________________*/
 params [
 	['_classname', "", [""]]
