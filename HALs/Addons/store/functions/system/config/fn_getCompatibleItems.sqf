@@ -1,6 +1,6 @@
 /*
-	Function: HALs_store_fnc_getCompatibleItems
-	Author: HallyG
+	Function: LWFs_store_fnc_getCompatibleItems
+	Author: LWFs
 	Returns all items and magazines compatible with a weapon.
 
 	Argument(s):
@@ -10,7 +10,7 @@
 	<ARRAY>
 
 	Example:
-	(primaryWeapon player) call HALs_store_fnc_getCompatibleItems;
+	(primaryWeapon player) call LWFs_store_fnc_getCompatibleItems;
 __________________________________________________________________*/
 params [
 	["_classname", ""]
