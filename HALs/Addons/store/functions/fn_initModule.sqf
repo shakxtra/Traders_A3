@@ -1,6 +1,6 @@
 /*
-	Function: HALs_store_fnc_initModule;
-	Author: HallyG
+	Function: LWFs_store_fnc_initModule;
+	Author: LWFs
 	Module initialisation.
 
 	Argument(s):
@@ -10,10 +10,11 @@
 	None
 
 	Example:
-	[] call HALs_store_fnc_initModule;
+	[] call LWFs_store_fnc_initModule;
 __________________________________________________________________*/
-if (!isNil "HALs_store_moduleInit") exitWith {};
-HALs_store_moduleInit = true;
+if (!isNil "LWFs_store_moduleInit") exitWith {};
+LWFs_store_moduleInit = true;
 
-if (isServer) then {call HALs_store_fnc_initServer};
-if (hasInterface) then {call HALs_store_fnc_initClient};
+if (isServer) then {call LWFs_store_fnc_initServer};
+
+if (hasInterface) then {call LWFs_store_fnc_initClient};
