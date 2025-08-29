@@ -1,0 +1,13 @@
+#define HALs_DEF_INIT
+	#include "HALs\Addons\main\config.hpp"
+#undef HALs_DEF_INIT
+
+class CfgFunctions {
+	#define HALs_DEF_FUNCTIONS
+		#include "HALs\Addons\main\config.hpp"
+	#undef HALs_DEF_FUNCTIONS
+};
+
+author = "SHAKXTRA";
+onLoadName = "S.O.E - PMC";
+onLoadMission = "Mision Official";
