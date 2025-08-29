@@ -1,11 +1,11 @@
-#define HALs_DEF_INIT
-	#include "HALs\Addons\main\config.hpp"
-#undef HALs_DEF_INIT
+#define LWFs_DEF_INIT
+	#include "LWFs\Addons\main\config.hpp"
+#undef LWFs_DEF_INIT
 
 class CfgFunctions {
-	#define HALs_DEF_FUNCTIONS
-		#include "HALs\Addons\main\config.hpp"
-	#undef HALs_DEF_FUNCTIONS
+	#define LWFs_DEF_FUNCTIONS
+		#include "LWFs\Addons\main\config.hpp"
+	#undef LWFs_DEF_FUNCTIONS
 };
 
 author = "SHAKXTRA";

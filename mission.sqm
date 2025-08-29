@@ -439,7 +439,7 @@ dlcs[]=
 randomSeed=11091526;
 class ScenarioData
 {
-	author="HallyG";
+	author="LWFs";
 };
 class Mission
 {
@@ -2447,7 +2447,7 @@ class Mission
 			angle=3.3506434;
 			class Attributes
 			{
-				condition="(player getVariable [""HALs_store_trader_current"", objNull]) isEqualTo trader1";
+				condition="(player getVariable [""LWFs_store_trader_current"", objNull]) isEqualTo trader1";
 				sizeA=2;
 				sizeB=2;
 			};
@@ -3236,7 +3236,7 @@ class Mission
 			position[]={1963.0856,6.2466741,5706.8115};
 			class Attributes
 			{
-				condition="(player getVariable [""HALs_store_trader_current"", objNull]) isEqualTo trader2";
+				condition="(player getVariable [""LWFs_store_trader_current"", objNull]) isEqualTo trader2";
 				sizeA=0;
 				sizeB=0;
 				sizeC=0;
