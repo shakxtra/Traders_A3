@@ -1,8 +1,6 @@
 /*
-	Function: HALs_store_fnc_getCargoMass
-	Author: L-H, edited by commy2, rewritten by joko // Jonas
-	Calculates the mass of an item or of all the items in a container.
-	(Recursive)
+	Function: LWFs_store_fnc_getCargoMass
+	Author: LWFs
 
 	Argument(s):
 	0: Container <OBJECT>
@@ -11,7 +9,7 @@
 	<NUMBER>
 
 	Example:
-	(vestContainer player) call HALs_store_fnc_getCargoMass;
+	(vestContainer player) call LWFs_store_fnc_getCargoMass;
 __________________________________________________________________*/
 params [
 	["_container", objNull, [objNull]]
@@ -38,7 +36,7 @@ private _totalMass = 0;
 _containers = (everyContainer _container);
 if (count _containers > 0) then {
 	{
-		_totalMass = _totalMass + (_x call HALs_store_fnc_getCargoMass);
+		_totalMass = _totalMass + (_x call LWFs_store_fnc_getCargoMass);
 	} forEach (_containers apply {_x select 1})
 };
 
